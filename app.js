@@ -1,1 +1,1 @@
-console.log('App loaded');
+import '../styles/globals.css'
