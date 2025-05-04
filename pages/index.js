@@ -1,44 +1,45 @@
 import Head from "next/head";
 
+const services = [
+  "Construction & Development",
+  "Renovation Services",
+  "Sanitary & Plumbing Materials",
+  "Heating & Cooling Supplies",
+  "Real Estate",
+  "Interior Design & Decoration",
+  "Furniture & Woodwork (Zwood)",
+  "CNC & Edge Banding",
+  "Electric Vehicles & Bikes",
+  "Solar Systems",
+  "Other / Custom Projects",
+  "Family Tree"
+];
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white text-gray-800 font-sans">
+    <div className="min-h-screen bg-gray-50 text-gray-800 font-sans">
       <Head>
         <title>Abdayem Group</title>
-        <meta name="description" content="Abdayem Group - Zwood, Wood Service Center, and more." />
+        <meta name="description" content="Abdayem Group - Innovation, Construction, and Smart Living" />
       </Head>
 
-      <header className="bg-gray-900 text-white p-6 shadow-md">
+      <header className="bg-white shadow p-6 flex flex-col items-center text-center">
         <h1 className="text-3xl font-bold">Abdayem Group</h1>
-        <p className="text-sm">Innovation in Woodwork and Beyond</p>
+        <p className="text-sm text-gray-600">Innovation, Construction, and Smart Living Under One Roof</p>
       </header>
 
-      <main className="space-y-24 p-6">
-        <section id="zwood" className="space-y-4">
-          <h2 className="text-2xl font-semibold">Zwood - Furniture Manufacturing</h2>
-          <p>Zwood specializes in high-quality kitchen cabinets, closets, and TV units. We blend craftsmanship with modern technology to deliver elegant solutions.</p>
-          <a href="#" className="text-blue-600 underline">Learn more</a>
-        </section>
-
-        <section id="wood-service" className="space-y-4">
-          <h2 className="text-2xl font-semibold">Wood Service Center</h2>
-          <p>Offering CNC cutting, edge banding, and custom woodworking services for carpenters and professionals.</p>
-          <a href="#" className="text-blue-600 underline">Explore Services</a>
-        </section>
-
-        <section id="others" className="space-y-4">
-          <h2 className="text-2xl font-semibold">Other Ventures</h2>
-          <p>Stay tuned for more from Abdayem Group. We’re expanding into new sectors soon.</p>
-        </section>
-
-        <section id="contact" className="space-y-4">
-          <h2 className="text-2xl font-semibold">Contact Us</h2>
-          <p>Email: info@abdayem.com</p>
-          <p>Phone: +961 XXX XXX</p>
+      <main className="p-6">
+        <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+          {services.map((service, index) => (
+            <div key={index} className="bg-white p-4 rounded-lg shadow hover:shadow-md transition text-center">
+              <div className="text-4xl mb-2">🏗️</div>
+              <h3 className="font-semibold text-lg">{service}</h3>
+            </div>
+          ))}
         </section>
       </main>
 
-      <footer className="bg-gray-100 text-center p-4 text-sm">
+      <footer className="text-center text-sm text-gray-500 p-4 mt-8">
         &copy; {new Date().getFullYear()} Abdayem Group. All rights reserved.
       </footer>
     </div>
