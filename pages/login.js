@@ -5,5 +5,5 @@ export default function Login() {
       <p>Login with Email, Facebook, Instagram (placeholder)</p>
       <p>Admin and Employee access here</p>
     </div>
-  )
+  );
 }

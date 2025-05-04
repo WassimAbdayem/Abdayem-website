@@ -1,47 +1,28 @@
-import Head from "next/head";
+import Link from 'next/link';
 
-const services = [
-  "Construction & Development",
-  "Renovation Services",
-  "Sanitary & Plumbing Materials",
-  "Heating & Cooling Supplies",
-  "Real Estate",
-  "Interior Design & Decoration",
-  "Furniture & Woodwork (Zwood)",
-  "CNC & Edge Banding",
-  "Electric Vehicles & Bikes",
-  "Solar Systems",
-  "Other / Custom Projects",
-  "Family Tree"
+const icons = [
+  'Real Estate', 'Electric Cars and Bikes', 'CNC and Edge Banding', 'Sanitary and Plumbing',
+  'Heating and Cooling', 'Solar System', 'Furniture and Woodwork', 'Interior and Exterior Design',
+  'Renovation Services', 'Development and Construction', 'Family Tree', 'Others'
 ];
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-800 font-sans">
-      <Head>
-        <title>Abdayem Group</title>
-        <meta name="description" content="Abdayem Group - Innovation, Construction, and Smart Living" />
-      </Head>
-
-      <header className="bg-white shadow p-6 flex flex-col items-center text-center">
-        <h1 className="text-3xl font-bold">Abdayem Group</h1>
-        <p className="text-sm text-gray-600">Innovation, Construction, and Smart Living Under One Roof</p>
-      </header>
-
-      <main className="p-6">
-        <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-          {services.map((service, index) => (
-            <div key={index} className="bg-white p-4 rounded-lg shadow hover:shadow-md transition text-center">
-              <div className="text-4xl mb-2">🏗️</div>
-              <h3 className="font-semibold text-lg">{service}</h3>
+    <div style={{ padding: 20 }}>
+      <h1>Abdayem Group</h1>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+        {icons.map((icon, i) => (
+          <Link key={i} href={`/${icon.toLowerCase().replace(/ /g, '-').replace(/&/g, '')}`}>
+            <div style={{
+              background: '#fff', padding: 20, borderRadius: 10,
+              textAlign: 'center', boxShadow: '0 0 10px rgba(0,0,0,0.1)'
+            }}>
+              <img src="/placeholder.png" alt={icon} width="100" />
+              <h3>{icon}</h3>
             </div>
-          ))}
-        </section>
-      </main>
-
-      <footer className="text-center text-sm text-gray-500 p-4 mt-8">
-        &copy; {new Date().getFullYear()} Abdayem Group. All rights reserved.
-      </footer>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }
